@@ -1,6 +1,7 @@
 package com.techjini.mp4parser
 
 import android.Manifest
+import android.media.MediaScannerConnection
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
@@ -62,5 +63,6 @@ class MainActivity : AppCompatActivity() {
         out.writeContainer(fc)
         fc.close()
 
+        MediaScannerConnection.scanFile(this, arrayOf(output), null, null)
     }
 }
